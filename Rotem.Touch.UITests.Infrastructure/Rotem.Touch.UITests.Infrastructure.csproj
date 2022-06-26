@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0440361-8F78-4CA5-8C82-A559041E11BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rotem.Touch.UITests.Infrastructure</RootNamespace>
+    <AssemblyName>Rotem.Touch.UITests.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControllersLayoutParser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\ControllersLayoutParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>ExternalDependencies\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="OFFICE, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>ExternalDependencies\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.11.1\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.11.1\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Helpers\Browser.cs" />
+    <Compile Include="Helpers\BuildingBlocksValidator.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BreederPrecisionAdvancedFeeding.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BreederPrecisionBasicFeeding.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BreederStandardAdvancedFeeding.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BreederStandardBasicFeeding.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BroilerStandard.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\LayerPrecision.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\PigsPrecisionRoom.cs" />
+    <Compile Include="Helpers\DayBasedComparer.cs" />
+    <Compile Include="Helpers\Configuration\ConfigurationManagerHelper.cs" />
+    <Compile Include="Helpers\Configuration\ConnectionManager.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\BroilerPrecision.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\ColdStartConfiguration.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\ConfigurationsManager.cs" />
+    <Compile Include="Helpers\ControllerConfigurations\ControllerPageSetup.cs" />
+    <Compile Include="Helpers\DriverManager.cs" />
+    <Compile Include="Helpers\Enums\ControlModeMinMaxLevel.cs" />
+    <Compile Include="Helpers\Enums\Device.cs" />
+    <Compile Include="Helpers\Enums\FieldType.cs" />
+    <Compile Include="Helpers\Enums\Houses.cs" />
+    <Compile Include="Helpers\Enums\KeyPad.cs" />
+    <Compile Include="Helpers\Enums\PlcRelays.cs" />
+    <Compile Include="Helpers\Enums\SystemTimeout.cs" />
+    <Compile Include="Helpers\Enums\TemperatureUnit.cs" />
+    <Compile Include="Helpers\Enums\WeightUnit.cs" />
+    <Compile Include="Helpers\InputMethods\PointNumericKeyPad.cs" />
+    <Compile Include="Helpers\Interfaces\INavigator.cs" />
+    <Compile Include="Helpers\Interfaces\IUrlCreator.cs" />
+    <Compile Include="Helpers\MultiLanguageHelper.cs" />
+    <Compile Include="Helpers\PageErrorMessageService.cs" />
+    <Compile Include="Helpers\Extensions\AssertExtensions.cs" />
+    <Compile Include="Helpers\Extensions\DataTableExtension.cs" />
+    <Compile Include="Helpers\Extensions\DictionaryExtension.cs" />
+    <Compile Include="Helpers\Extensions\EnumExtension.cs" />
+    <Compile Include="Helpers\Extensions\Selenium\ByFactory.cs" />
+    <Compile Include="Helpers\Extensions\Selenium\MandatoryComponentAttribute.cs" />
+    <Compile Include="Helpers\Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\Extensions\UnitsExtension.cs" />
+    <Compile Include="Helpers\Extensions\Waits.cs" />
+    <Compile Include="Helpers\Extensions\WebDriverExtension.cs" />
+    <Compile Include="Helpers\Extensions\WebElementExtension.cs" />
+    <Compile Include="Helpers\InputMethods\BaseNumericKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\ButtonsGroup.cs" />
+    <Compile Include="Helpers\InputMethods\DateKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\InputRange.cs" />
+    <Compile Include="Helpers\InputMethods\KeyPadFactory.cs" />
+    <Compile Include="Helpers\InputMethods\KeyPadHelper.cs" />
+    <Compile Include="Helpers\InputMethods\MinusNumericKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\MinusPointNumericKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\NumericUpDownKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\PlcDataField.cs" />
+    <Compile Include="Helpers\InputMethods\ReadonlyText.cs" />
+    <Compile Include="Helpers\InputMethods\StateCycleKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\TimeKeyPad.cs" />
+    <Compile Include="Helpers\InputMethods\ToggleSeries.cs" />
+    <Compile Include="Helpers\InputMethods\TouchCheckBox.cs" />
+    <Compile Include="Helpers\InputMethods\TouchComboBox.cs" />
+    <Compile Include="Helpers\InputMethods\TouchToggleButton.cs" />
+    <Compile Include="Helpers\Interfaces\IApplicationPage.cs" />
+    <Compile Include="Helpers\Interfaces\IErrorMessagePage.cs" />
+    <Compile Include="Helpers\Interfaces\IGraphPage.cs" />
+    <Compile Include="Helpers\Interfaces\IMetadataDependent.cs" />
+    <Compile Include="Helpers\Interfaces\INavigatalePageView.cs" />
+    <Compile Include="Helpers\Interfaces\IPageObject.cs" />
+    <Compile Include="Helpers\Interfaces\IPlcApplicationPage.cs" />
+    <Compile Include="Helpers\Interfaces\IReadonlyTablePage.cs" />
+    <Compile Include="Helpers\Interfaces\IEditableTablePage.cs" />
+    <Compile Include="Helpers\Interfaces\IRotemWebPage.cs" />
+    <Compile Include="Helpers\Interfaces\ISystemInputMethod.cs" />
+    <Compile Include="Helpers\Interfaces\IControllerConfiguration.cs" />
+    <Compile Include="Helpers\Interfaces\IControllerTable.cs" />
+    <Compile Include="Helpers\Interfaces\ISettingsPage.cs" />
+    <Compile Include="Helpers\Interfaces\ITableColumn.cs" />
+    <Compile Include="Helpers\Interfaces\ITablePage.cs" />
+    <Compile Include="Helpers\Interfaces\ISystemKeyPad.cs" />
+    <Compile Include="Helpers\Interfaces\ITablePageExpectedView.cs" />
+    <Compile Include="Helpers\Interfaces\ITabsPage.cs" />
+    <Compile Include="Helpers\MetadataFactory.cs" />
+    <Compile Include="Helpers\Navigator.cs" />
+    <Compile Include="Helpers\PagesFactory.cs" />
+    <Compile Include="Helpers\PageViews\GraphView\SimpleGraphPage.cs" />
+    <Compile Include="Helpers\PageViews\SettingsView\Generate_EnumFields.cs">
+      <DependentUpon>Generate_EnumFields.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Helpers\PageViews\SettingsView\Generate_EnumFields1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Generate_EnumFields.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PageViews\SettingsView\PageInitialSetup.cs" />
+    <Compile Include="Helpers\PageViews\SettingsView\Generate_SettingsFields.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Generate_SettingsFields.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PageViews\SettingsView\SettingsFieldTypes.cs" />
+    <Compile Include="Helpers\PageViews\SettingsView\SimpleSettingsPage.cs" />
+    <Compile Include="Helpers\PageViews\TableView\ColumnsFactory.cs" />
+    <Compile Include="Helpers\PageViews\TableView\ColumnsTypes.cs" />
+    <Compile Include="Helpers\PageViews\TableView\ColumnsValueTypesFactory.cs" />
+    <Compile Include="Helpers\PageViews\TableView\ControllerTableService.cs" />
+    <Compile Include="Helpers\PageViews\TableView\TableHeaderHelper.cs" />
+    <Compile Include="Helpers\PageViews\TabsView\SimpleTabsPage.cs" />
+    <Compile Include="Helpers\RotemWebNavigator.cs" />
+    <Compile Include="Helpers\TestProjectAttributes.cs" />
+    <Compile Include="Helpers\UrlCreators\BaseUrlCreator.cs" />
+    <Compile Include="Helpers\UrlCreators\RotemWebUrlCreator.cs" />
+    <Compile Include="Helpers\UrlCreators\TouchUrlCreator.cs" />
+    <Compile Include="Helpers\UrlCreators\UrlFactory.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\AccordionTablePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Co2Treatment\Co2TreatmentPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Co2Treatment\Co2TreatmentSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\ControlMode\ControlModePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\CoolPad\CoolPadPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\CoolPad\CoolPadSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\EggRoomControl\EggRoomControlPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\EggRoomControl\EggRoomControlSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\ExtraSystems\ExtraSystemsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\FeedScaleProgram\FeedScaleProgramPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\FeedScaleProgram\FeedScaleProgramSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Foggers\FoggersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Foggers\FoggersSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\AmmoniaTreatment\AmmoniaTreatmentPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\AmmoniaTreatment\AmmoniaTreatmentSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\HumidityTreatment\HumidityTreatmentPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\HumidityTreatment\HumidityTreatmentSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\LightControl\LightControlPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\LightControl\LightControlSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\LightControl\LightFeedTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\LightControl\LightNoFeedTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxLevelByDaysCurvePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxLevelByDaysPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxLevelBySoftMinPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxLevelByTimePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxLevelByWeightPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxSoftSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\MinMaxWeightSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinMaxLevel\SimpleMinMaxLevelPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\NaturalVentilation\NaturalVentilationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\NaturalVentilation\NaturalVentilationSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Nests\NestsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\Nests\NestsTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\StaticPressure\AtticVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\StaticPressure\MinimumVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\StaticPressure\StaticPressurePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\StaticPressure\StaticPressureSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\StaticPressure\TunnelVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\SystemParameters\SystemParametersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\TemperatureCurve\TemperatureCurvePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\TemperatureCurve\TemperatureCurveSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\LightDimmers\LightDimmersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\TimerSettings\TimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\WaterAndFeedControl\WaterAndFeedPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\WaterAndFeedControl\WaterAndFeedSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\WorkRoomControl\WorkRoomControlPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\DeviceInstallationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Global\Dashboard\DashboardPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Global\Dashboard\DevicesTablePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Global\Dashboard\SensorsPanel.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Global\Dashboard\VentLevelPanel.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\GridTablePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\AlarmsHistory\AlarmsHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\BirdWeightHistory\BirdWeightHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\Co2History\Co2HistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\EggBeltHistory\EggBelthistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\EggRoomHistory\EggRoomhistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\EggsHistory\EggshistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\EventsLogHistory\EventsLogHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\FeedConsumptionHistory\FeedConsumptionHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\FeedConversionHistory\FeedConversionHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\HeatersHistory\HeatersHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\HistoryView\HistoryViewPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\HistoryView\HistoryViewSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\AmmoniaHistory\AmmoniaHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\HumidityHistory\HumidityHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\Mortality\MortalityHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\PowerConsumptionHistory\PowerConsumptionHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\RadiantHeatersHistory\RadiantHeatersHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\TemperatureHistory\TemperatureHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\History\WaterHistory\WaterHistoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\WaterAndFeedStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\CurtainPositionPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\AirStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\SiloPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\BirdScalePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\EggCounterStatePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\EggRoomStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\FeedScaleStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\WaterMetersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\AnalogOutputStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\CurvePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\LightTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\LightStatusTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\LightStatusPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\NaturalVentilationPageHotkey.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\TemperatureandHumidityPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\HotKeys\ZoneInletPosition.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AlarmReset\AlarmResetPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AlarmReset\AlarmResetTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AlarmReset\AlarmResetTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AlarmSettings\AlarmSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AlarmSettings\AlarmSettingsSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AnimalInventory\AnimalInventoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\AnimalInventory\AnimalInventoryTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\BirdInventory\BirdInventoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\BirdInventory\BirdInventoryTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\CurrentSense\CurrentSenseTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\CurrentSense\CurrentSensePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FailSafeSetting\FailSafeSettingPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedersAndDrinkers\FeedersAndDrinkersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedersAndDrinkers\FeedersAndDrinkersSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedInventory\FeedInventoryPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedInventory\FeedInventorySettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedInventory\FeedInventoryTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedLinesCalibration\FeedLinesCalibrationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\FeedLinesCalibration\FeedLinesCalibrationTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\GrowthDayAndGroup\GrowthDayAndGroupPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\SwitchesAndRelays\SwitchesAndRelaysPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\GrowthDayAndFlock\GrowthDayAndFlockPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\NippleFlushing\NippleFlushingPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\NippleFlushing\OrderTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\NippleFlushing\ScheduleTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\Password\PasswordPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\WaterOnDemand\WaterOnDemandPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Management\WaterOnDemand\WaterOnDemandSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinVentTimer\MinVentTimerPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\Control\MinVentTimer\MinVentTimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\PagePlugins.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\ReadonlyGridTablePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\AirInletsSetup\AirInletsSetupPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\AirInletsSetup\AirInletsSetupSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\AnalogOutputsInstallation\AnalogOutputsInstallationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\AnalogOutputsInstallation\AnalogOutputsInstallationSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdWeight\BirdWeightPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdWeight\BirdWeightSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdWeight\BirdWeightTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdCurve\BirdCurveSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdCurve\BirdCurvePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\BirdCurve\BirdCurveTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\Communication\CommunicationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\FanAirCapacity\FanAirCapacityPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\GeneralSetup\GeneralSetupPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\HardwareChecklist\HardwareChecklistPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\HardwareChecklist\HardwareChecklistSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\HouseDimensions\HouseDimensionsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\ExhaustAndTunnelFansSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\ExhaustAndTunnelFansTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\LevelsOfVentilationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\StirAndVariableStirFansTabFansPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\VariableSpeedFansTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\VentAndCurtainSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\LevelsOfVentilation\VentAndCurtainTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\MuntersDrive\MuntersDrivePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleLayout\ScaleLayoutPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\RelayLayout\RelayLayoutSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\RelayLayout\RelayLayoutPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\BirdScaleTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\BirdScaleTabSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\GeneralTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\GeneralTabSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\ScaleSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleSettings\SiloTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\ScaleTesting\ScaleTestingPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\SensorsInstallation\AnalogTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\SensorsInstallation\DigitalTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\SensorsInstallation\SensorsInstallationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\SiloAugerLayout\SiloAugerLayoutPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\SiloSettings\SiloSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\StirFanProgram\StirFanProgramPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\StirFanProgram\StirFanProgramSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\TemperatureAndTimer\TemperatureAndTimerPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\TemperatureAndTimer\TemperatureAndTimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\TemperatureDefinition\TemperatureDefinitionPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\TimeAndDate\TimeAndDatePage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\VariableSpeedFansSetting\VariableSpeedFansSettingPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\VariableSpeedFansSetting\VariableSpeedFansSettingSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\VentCurtSetup\VentCurtSetupCalibrationPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\VentCurtSetup\VentCurtSetupPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\Version\VersionPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\System\Version\VersionTable.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\TablePageService.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\TopMenuBarPage.cs" />
+    <Compile Include="Pages\PlatinumPro\ByMode\TempReminderPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\AmmoniaTreatment\AmmoniaTreatmentPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\AmmoniaTreatment\AmmoniaTreatmentSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Co2Treatment\Co2TreatmentPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Co2Treatment\Co2TreatmentSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\ControlMode\ControlModePage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\CoolPad\CoolapdSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\CoolPad\CoolpadPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\ExtraSystems\ExtraSystemsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Foggers\FoggersPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Foggers\FoggersSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Humidity\HumidityPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\Humidity\HumiditySettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\LightControl\LightControlPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\LightControl\LightControlSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\LightControl\LightFeedTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\LightControl\LightNoFeedTabPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\StaticPressure\AtticVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\StaticPressure\MinimumVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\StaticPressure\StaticPressurePage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\StaticPressure\StaticPressureSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\StaticPressure\TunnelVentilationTab.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\TimerSettings\TimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\MinVentTimer\MinVentTimerPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\MinVentTimer\MinVentTimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\TemperatureCurve\TemperatureCurvePage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\TemperatureCurve\TemperatureCurveSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\WaterAndFeedControl\WaterAndFeedPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\Control\WaterAndFeedControl\WaterAndFeedSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\System\TemperatureAndTimer\TemperatureAndTimerPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\System\TemperatureAndTimer\TemperatureAndTimerSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\System\VariableSpeedFansSetting\VariableSpeedFansSettingPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\System\VariableSpeedFansSetting\VariableSpeedFansSettingSettingsPage.cs" />
+    <Compile Include="Pages\PlatinumPro\Standard\System\VentCurtSetup\VentCurtSetupPage.cs" />
+    <Compile Include="Pages\PLC\PlcOtherSensorsPage.cs" />
+    <Compile Include="Pages\PLC\PlcRelaysPage.cs" />
+    <Compile Include="Pages\PLC\PlcTemperatureSensorsPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\AnalogSensors\AnalogSensorsPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\DigitalSensors\DigitalSensorsPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\HardwareChecklist\HardwareChecklistPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\HardwareChecklist\HardwareChecklistSettingsPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\Scales\ScalesPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\StaticPressureCalibration\StaticPressureCalibrationPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\WaterAndFeedCalibration\FeedTabPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\WaterAndFeedCalibration\WaterAndFeedCalibrationPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\WaterAndFeedCalibration\WaterTabPage.cs" />
+    <Compile Include="Pages\PLC\TestingAndCalibration\WindDirectionCalibration\WindDirectionCalibrationPage.cs" />
+    <Compile Include="Pages\RotemWeb\Comparison\ComparisonPage.cs" />
+    <Compile Include="Pages\RotemWeb\MyAccount\MyAccount.cs" />
+    <Compile Include="Pages\RotemWeb\HomePage.cs" />
+    <Compile Include="Pages\RotemWeb\Overview\OverviewPage.cs" />
+    <Compile Include="Pages\RotemWeb\Login\LoginArgs.cs" />
+    <Compile Include="Pages\RotemWeb\Login\LoginPage.cs" />
+    <Compile Include="RNBL\RNBLAccessor.cs" />
+    <Compile Include="RNBL\RnblArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\ExcelCreatorPageFields.cs" />
+    <Compile Include="UnitTests\TimeAndDatePage.Tests.cs" />
+    <Compile Include="UnitTests\FixedDictionaryInitialize.cs" />
+    <Compile Include="UnitTests\LoadColdStartConfiguration.cs" />
+    <Compile Include="UnitTests\SettingsPage.Tests.cs" />
+    <Compile Include="UnitTests\PagesFactory.Tests.cs" />
+    <Compile Include="UnitTests\PageInitialSetup.Tests.cs" />
+    <Compile Include="UnitTests\RNBLAccessor.Tests.cs" />
+    <Compile Include="UnitTests\Selenium.Tests.cs" />
+    <Compile Include="UnitTests\TablePage.Tests.cs" />
+    <Compile Include="UnitTests\TabsPage.Tests.cs" />
+    <Compile Include="UnitTests\Navigator.Tests.cs" />
+    <Compile Include="UnitTests\AppConfig.Tests.cs" />
+    <Compile Include="UnitTests\PLCPages.Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Rotem.Touch.UITests\App.config">
+      <Link>App.config</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExternalDependencies\KillAllChromeDriverProccessAndCopyAllOrderedTests.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helpers\PageViews\SettingsView\Generate_EnumFields.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Generate_EnumFields.cs</LastGenOutput>
+    </None>
+    <None Include="Helpers\PageViews\SettingsView\Generate_SettingsFields.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Generate_SettingsFields.cs</LastGenOutput>
+      <LastOutputs>.\Script1.cs</LastOutputs>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

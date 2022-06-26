@@ -1,0 +1,33 @@
+<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="$(SolutionDir)Rotem.Touch.UITests.Infrastructure\bin\Debug\Rotem.Touch.UITests.Infrastructure.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Helpers.PageViews.SettingsView" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Pages.System.GeneralSetup" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Helpers.Extensions" #>
+<#@ output extension=".cs" #>
+ 
+<#
+var page = new GeneralSetupPage();
+var properties = page.GetType().GetProperties();
+ var settingsFields = properties.Where(p => p.PropertyType.GetInterfaces().Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == typeof(ISettingsField<>)));
+#>
+
+using Rotem.Touch.UITests.Infrastructure.Helpers.Extensions;
+
+	public enum <#= page.Name.Replace(" ","") #>Settings
+	{
+<#
+foreach (var settingsField in settingsFields)
+{
+var filedProp = settingsField.GetValue(page, null);
+var name = filedProp.GetType().GetProperty("Name");
+var fieldName = name.GetValue(filedProp, null).ToString();#>
+		[StringValue("<#= fieldName.ToString() #>")] <#= fieldName.Replace(" ","") #>,
+<#
+}
+#>
+	}
+

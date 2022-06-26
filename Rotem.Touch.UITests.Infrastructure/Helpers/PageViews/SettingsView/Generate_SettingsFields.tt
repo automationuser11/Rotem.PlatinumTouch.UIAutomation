@@ -1,0 +1,79 @@
+<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="D:\Work\Customers\Rotem\Rotem.UIAutomation.NewArchitecture\packages\Selenium.WebDriver.2.47.0\lib\net40\WebDriver.dll" #>
+<#@ assembly name="D:\Work\Customers\Rotem\Rotem.UIAutomation.NewArchitecture\packages\Selenium.Support.2.47.0\lib\net40\WebDriver.Support.dll" #>
+<#@ assembly name="$(SolutionDir)Rotem.Touch.UITests.Infrastructure\bin\Debug\Rotem.Touch.UITests.Infrastructure.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="OpenQA.Selenium" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Helpers" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Helpers.PageViews.SettingsView" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Pages.System.TimeAndDate" #>
+<#@ import namespace="Rotem.Touch.UITests.Infrastructure.Helpers.Extensions" #>
+<#@ output extension=".cs" #>
+
+using Rotem.Touch.UITests.Infrastructure.Helpers.InputMethods;
+using Rotem.Touch.UITests.Infrastructure.Helpers.PageViews.SettingsView;
+
+public class SettingsFiledContainer
+{
+<#
+PagesFactory.UpdateFactory();
+var page = PagesFactory.GetPage<TimeAndDatePage>();
+Navigator.NavigateTo(page);
+Waits.Wait(4);
+
+string settingsGroup = null;
+var settingsFields = page.GetSettingsFieldCollection();
+
+foreach (var settingsField in settingsFields)
+{
+	var div = settingsField.FindElement(By.TagName("div"));
+	var nameElement = div.FindElement(By.CssSelector("div[class='setting-label pull-left ng-binding']"));
+
+    var settings = SettingsFieldFactory.GetSettingsField(settingsField);
+	var propertyType = settings.GetType().Name;
+    var propertyName = SettingsFieldFactory.RemoveNonAlphanumeric(settings.Name);
+    var privateMember = "_" + propertyName[0].ToString().ToLower() + propertyName.Remove(0, 1);
+	var inputMethodStr = "null";
+
+	var group = SettingsFieldFactory.GetSettingsGroup(settingsField);
+	if(settingsGroup == null)
+	{
+		settingsGroup = group;
+ #> #region Group Name: <#= group.ToString() #> 
+ <# }
+    else if(settingsGroup != group) 
+	{
+	settingsGroup = group; #>
+   
+    #endregion
+
+	#region Group Name: <#= group.ToString() #> 
+
+	<#} if(settings is KeyPadSettingsField) {#>	
+	public <#= propertyType.ToString() #> <#= propertyName.ToString() #>
+	{
+		get{ return <#= privateMember.ToString() #> ?? (<#= privateMember.ToString() #> = new <#= propertyType.ToString() #>(){ Name = "<#= settings.Name.ToString() #>", InputMethod = <# if(settings.InputMethod == null) { inputMethodStr = "null"; }else { inputMethodStr = "new " + settings.InputMethod.GetType().Name.ToString() + "()";}#><#= inputMethodStr.ToString() #> }); }
+		set { <#= privateMember.ToString() #>  = value; }
+	}
+	private <#= propertyType.ToString() #>  <#= privateMember.ToString() #>;
+	<#} else{#>
+	public <#= propertyType.ToString() #> <#= propertyName.ToString() #>
+	{
+		get{ return <#= privateMember.ToString() #> ?? (<#= privateMember.ToString() #> = new <#= propertyType.ToString() #>("<#= settings.Name.ToString() #>")); }
+		set { <#= privateMember.ToString() #>  = value; }
+	}
+	private <#= propertyType.ToString() #>  <#= privateMember.ToString() #>;
+	<#}#>
+<#
+}
+#>
+
+#endregion 
+<# Browser.Close(); #>
+}
+
+
+

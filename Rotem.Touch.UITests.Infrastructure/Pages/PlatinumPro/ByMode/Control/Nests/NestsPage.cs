@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using Rotem.Touch.UITests.Infrastructure.Helpers.Interfaces;
+using Rotem.Touch.UITests.Infrastructure.Helpers.UrlCreators;
+
+namespace Rotem.Touch.UITests.Infrastructure.Pages.PlatinumPro.ByMode.Control.Nests
+{
+    public class NestsPage : IApplicationPage, ITableViewProvider<NestsTable>, IMetadataDependentPageObject
+    {
+        public Uri PageUrl
+        {
+            get { return _pageUri ?? (_pageUri = UrlFactory.GetUrl<NestsPage>()); }
+        }
+        private Uri _pageUri;
+        public string Name
+        {
+            get { return "Nests"; }
+        }
+        public string MenuName
+        {
+            get { return "Nests"; }
+        }
+        public string SubMenu { get { return "Control"; } }
+        public IEnumerable<string> Titles
+        {
+            get { return ApplicationPageService.Titles; }
+        }
+        public Metadata Metadata { get; set; }
+
+        public NestsTable TableView
+        {
+            get { return _tableView ?? (_tableView = new NestsTable()); }
+        }
+        private NestsTable _tableView;
+    }
+}
